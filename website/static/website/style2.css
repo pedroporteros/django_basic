@@ -1,0 +1,25 @@
+#meetingDetails {
+    text-align: center;
+    width: 80%;
+    margin-bottom: 30px;
+    border: 1px solid rgb(211, 210, 210);
+    border-radius: 10px;
+    padding: 20px;
+    -webkit-box-shadow: 14px 13px 28px -13px rgba(45,91,122,1);
+    -moz-box-shadow: 14px 13px 28px -13px rgba(45,91,122,1);
+    box-shadow: 14px 13px 28px -13px rgba(45,91,122,1);
+}
+
+#meetingOptions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#meetingOptions a{
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}

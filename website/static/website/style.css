@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+    margin: 0.5em auto;
+    padding: 0;
+    /* border: 1px solid lime; */
+}
+
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    color: cornflowerblue;
+    background-color: floralwhite;
+}
+
+h1 {
+    color: orange;
+    text-align: center;
+}
+
+#logInContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0.4em auto;
+    padding: 20px;
+}
+#meetingContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#meetingContainer a {
+    text-decoration: none;
+}
+
+#meetingContainer h2 {
+    margin-bottom: 20px;
+    border-bottom: 1px double black;
+    width: 40%;
+    text-align: center;
+}
+
+#meetingContainer table {
+    border-collapse: collapse;
+    width: 50%;
+    text-align: center;
+    height: 100px;
+    background-color: lightblue;
+    margin-bottom: 30px;
+}
+
+#meetingContainer table th {
+    background-color: cornflowerblue;
+    color: floralwhite;
+    border: 2px solid orange;
+}
+
+#options {
+    display: flex;
+    flex-direction: column;
+}
+
+#options a {
+    text-decoration: none;
+    border: 2px solid black;
+    box-shadow: 5px 5px 2px 2px cornflowerblue;
+}
+
+#goBack {
+    margin-left: 10%;
+}

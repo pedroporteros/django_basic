@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>{% block title %}{% endblock %}</title>
+        {% comment %} Imports for bootstrap {% endcomment %}
+        {% comment %} {% load bootstrap5 %} 
+        {% bootstrap_css %}
+        {% bootstrap_javascript %} {% endcomment %}
+        <link rel='stylesheet' href='{% static "website/style.css" %}'>
+        {%block extrahead%}{%endblock%}
+    </head>
+    <body>
+        <h1>Welcome to the Meeting Planner!</h1>
+        <div id='logInContainer'>
+        {%if user.is_authenticated %}
+            Logged in as: {{ user.get_username }}
+            <form method='post' action="{% url 'logout' %}" style='float:rigth'>
+                {% csrf_token %}
+                <button type='submit'>Logout</button>
+            </form>
+        {% else %}
+            <a href='{% url "login" %}'>LogIn</a>
+        {% endif %}
+        </div>
+        {%block content%}
+        {%endblock%}
+
+
+
+    </body>
+</html>
+

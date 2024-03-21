@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Meeting: {{meeting.title}} {% endblock %}
+
+{%block extrahead%}
+<link rel='stylesheet' href='{% static "website/style2.css" %}'>
+{%endblock%}
+
+{% block content %}
+<div id='meetingDetails'>
+    <h1>{{meeting.title}}</h1>
+
+    <p>
+        La cita ha sido concretada el {{meeting.date}}, a las {{meeting.start_date}}
+        en {{meeting.room}}
+    </p>
+
+    <p>Los partcipantes son:</p>
+    <div>
+
+        <ul>
+            {% for participant in meeting.participants.all %}
+                <li>{{ participant.username }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div id='meetingOptions'>
+        <a href='{% url 'edit' meeting.id %}'>Editar</a><br>
+        <a href='{% url 'delete' meeting.id %}'>Delete</a><br>
+    </div>
+</div>
+
+<div id='goBack'>
+    <a href='{% url 'welcome' %}'>Volver a Inicio</a>
+</div>
+
+
+{% endblock %}

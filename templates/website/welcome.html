@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} Welcome {% endblock %}
+
+{% block content %}
+
+<div id='meetingContainer'>
+    {%if user.is_authenticated %}
+        <h2>Meetings</h2>
+        <table>
+            <tr>
+                <th>Nombre</th>
+            </tr>
+            
+            {% for meeting in meetings %}
+                <tr>
+                    <td>
+                        <a href='{% url 'detail' meeting.id %}'>
+                            {{meeting.title}}
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            
+        </table>
+
+        <div id='options'>
+            <a href='{% url 'create' %}'>Crear una meeting nueva</a><br>
+            <a href='{% url 'rooms' %}'>Ir a rooms</a>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

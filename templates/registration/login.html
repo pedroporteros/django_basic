@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+    {% if form.errors %}
+        <p>usuario y contraseña no cuadran, intentalo de nuevo</p>
+    {% endif %}
+
+    <form method='POST'>
+        {% csrf_token %}
+        <table>
+            {{form}}
+        </table>
+        <input type='submit' value='login'>
+    </form>
+
+{% endblock %}
